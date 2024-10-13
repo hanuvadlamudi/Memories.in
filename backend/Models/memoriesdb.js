@@ -14,6 +14,9 @@ const MemoriesSchema = new Schema({
         type:String,
         required:true
     },
+    picture:{
+        type : String
+    },
     description:{
         type:String
     },createdAt:{
@@ -26,6 +29,6 @@ const MemoriesSchema = new Schema({
 })
 
 
-const MemoriesModel = mongoose.model("memories",MemooriesSchema);
+const MemoriesModel = mongoose.model("memorie",MemooriesSchema);
 
 export default MemoriesModel;
