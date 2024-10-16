@@ -1,15 +1,13 @@
 import express from 'express';
-import createMemory from '../controllers/MemoryController.js';
+import { createMemory, getAllMemories, getMemoryById } from '../controllers/MemoryController.js'; // Use named import
+import cloudinaryFileUploader from '../Middlewares/FileUploader.js';
 
-// Create a new router instance
 const router = express.Router();
 
-// Define your route
-router.get("/", (req, res) => {
-    res.send("Get All Employees");
-});
-
-router.post("/",createMemory)
+// Define routes
+router.post("/", cloudinaryFileUploader.single('picture'), createMemory);
+router.get("/", getAllMemories);
+router.get("/:id",getMemoryById);
 
 // Export the router as default
 export default router;

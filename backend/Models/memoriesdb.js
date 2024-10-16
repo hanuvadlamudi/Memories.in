@@ -29,6 +29,6 @@ const MemoriesSchema = new Schema({
 })
 
 
-const MemoriesModel = mongoose.model("memorie",MemooriesSchema);
+const MemoriesModel = mongoose.model("memorie",MemoriesSchema);
 
 export default MemoriesModel;
